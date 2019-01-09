@@ -15,8 +15,9 @@ class App extends Component {
       username: 'admin',
       password: 'password'
     })
-      .then(function(response){
+      .then((response) => {
         console.log(response)
+        this.setState({loggedIn: true, username: response.data.username})
       })
       .catch(function(error){
         console.log(error);
@@ -27,12 +28,24 @@ class App extends Component {
   componentDidMount () {
     console.log("componentDidMount lifecycle method ran!");
 
-    axios.get("allusers")
-      .then(response => {console.log(response)});
+    // axios.get("allusers")
+    //   .then(response => {console.log(response)});
+
+    //check session data to see if user should be logged in
+    axios.get("/user_data")
+    .then (response => {
+      console.log(response); 
+      if(response.data.loggedIn) {
+        this.setState({loggedIn: true, username: response.data.username})
+      }else {
+        console.log("no logged in user stored in session")
+      }
+      
+    })
   }
 
   render() {
-    let banner = this.state.loggedIn ? "Woah youre loggin in " : "unauthorized user";
+    let banner = this.state.loggedIn ? `Woah ${this.state.username} is loggin in ` : "unauthorized user";
     return (
       <div className="App">
         <h1>{banner}</h1>
@@ -42,7 +55,8 @@ class App extends Component {
           <h3>hello, Axe Throwing App</h3>
         </div>
         <p className="App-intro">
-          <button onClick={this.handleLogIn}>Log in to app</button>
+          {!this.state.loggedIn ? 
+            (<button onClick={this.handleLogIn}>Log in to app</button>) : ""}
         </p>
       </div>
     );
