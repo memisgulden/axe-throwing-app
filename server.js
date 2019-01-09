@@ -2,6 +2,10 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+//middleware for parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 
 //Database Stuff
 const mongoose = require("mongoose");
@@ -9,6 +13,12 @@ const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/axe-throwing-app");
 const db = require("./models");
 
+//login post route
+app.post("/login", function(req,res){
+  console.log("login route hit");
+  console.log(req.body);
+  res.json({loggedIn: true});
+})
 
 //all users test route
 app.get("/allusers", function(req,res){
