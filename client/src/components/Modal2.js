@@ -3,6 +3,7 @@ import {
   Modal, Button, FormControl, ControlLabel,
   FormGroup, Form, InputGroup
 } from 'react-bootstrap';
+import "./Modal.css";
 
 class ModalContainer2 extends React.Component {
   constructor(props, context) {
@@ -29,8 +30,8 @@ class ModalContainer2 extends React.Component {
 
     return (
       <div>
-
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+        
+        <Button className="prev" bsSize="large" block onClick={this.handleShow}>
           Previous User
         </Button>
 
@@ -58,7 +59,7 @@ class ModalContainer2 extends React.Component {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.handleClose}>Close</Button>
+            <Button bsStyle="success" onClick={this.handleClose}>Submit</Button>
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>

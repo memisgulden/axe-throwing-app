@@ -57,20 +57,15 @@ class App extends Component {
         </p>
 
         <div className="container">
-          <div className="jumbotron mt-5" id="homePage">
+          <div className="jumbotron mt-5">
 
             <h1 className="text-center"><span className="glyphicon glyphicon-screenshot"></span>AXE.app</h1>
             <h3 className="text-center">ready. aim. throw.</h3>
             <hr />
-            <div className="d-flex justify-content-center">
 
-              <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                < ModalContainer />
+                < ModalContainer /> 
                 < ModalContainer2 />
-              </div>
-
-            </div>
-
+              
           </div>
         </div>
       </div>
