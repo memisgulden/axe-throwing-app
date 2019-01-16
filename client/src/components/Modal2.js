@@ -4,7 +4,7 @@ import {
   FormGroup, Form, InputGroup
 } from 'react-bootstrap';
 
-class ModalContainer extends React.Component {
+class ModalContainer2 extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -31,26 +31,16 @@ class ModalContainer extends React.Component {
       <div>
 
         <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Create New User
+          Previous User
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Welcome!</Modal.Title>
+            <Modal.Title>Welcome Back!</Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
             <Form>
-              <FormGroup >
-                <ControlLabel>First Name</ControlLabel>{' '}
-                <FormControl type="text" placeholder="Jane" />
-              </FormGroup>{' '}
-
-              <FormGroup >
-                <ControlLabel>Last Name</ControlLabel>{' '}
-                <FormControl type="text" placeholder="Doe" />
-              </FormGroup>{' '}
-
               <FormGroup >
                 <ControlLabel>Emaill</ControlLabel>{' '}
                 <InputGroup>
@@ -61,31 +51,6 @@ class ModalContainer extends React.Component {
 
               <FormGroup >
                 <ControlLabel>Password</ControlLabel>{' '}
-                <FormControl type="text" placeholder="" />
-              </FormGroup>{' '}
-
-              <FormGroup >
-                <ControlLabel>Address</ControlLabel>{' '}
-                <FormControl type="text" placeholder="" />
-              </FormGroup>{' '}
-
-              <FormGroup >
-                <ControlLabel>Address 2</ControlLabel>{' '}
-                <FormControl type="text" placeholder="" />
-              </FormGroup>{' '}
-
-              <FormGroup >
-                <ControlLabel>City</ControlLabel>{' '}
-                <FormControl type="text" placeholder="" />
-              </FormGroup>{' '}
-
-              <FormGroup >
-                <ControlLabel>State</ControlLabel>{' '}
-                <FormControl type="text" placeholder="" />
-              </FormGroup>{' '}
-
-              <FormGroup  >
-                <ControlLabel>Zip Code</ControlLabel>{' '}
                 <FormControl type="text" placeholder="" />
               </FormGroup>{' '}
 
@@ -103,4 +68,4 @@ class ModalContainer extends React.Component {
 }
 
 
-export default ModalContainer;
+export default ModalContainer2;
