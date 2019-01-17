@@ -4,7 +4,6 @@ import "./App.css";
 import ModalContainer from "./components/Modal";
 import ModalContainer2 from "./components/Modal2";
 
-
 class App extends Component {
   state = {
     loggedIn: false
@@ -47,14 +46,14 @@ class App extends Component {
   }
 
   render() {
-    let banner = this.state.loggedIn ? `Woah ${this.state.username} is loggin in ` : "unauthorized user";
+    // let banner = this.state.loggedIn ? `Woah ${this.state.username} is loggin in ` : "unauthorized user";
     return (
       <div className="App">
-        <h1>{banner}</h1>
+        {/* <h1>{banner}</h1>
         <p className="App-intro">
           {!this.state.loggedIn ?
             (<button onClick={this.handleLogIn}>Log in to app</button>) : ""}
-        </p>
+        </p> */}
 
         <div className="container">
           <div className="jumbotron mt-5">
@@ -63,9 +62,9 @@ class App extends Component {
             <h3 className="text-center">ready. aim. throw.</h3>
             <hr />
 
-                < ModalContainer /> 
-                < ModalContainer2 />
-              
+            < ModalContainer />
+            < ModalContainer2 />
+
           </div>
         </div>
       </div>

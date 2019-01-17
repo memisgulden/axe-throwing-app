@@ -4,15 +4,18 @@ import {
   FormGroup, Form, InputGroup
 } from 'react-bootstrap';
 
+
 class ModalContainer extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.setRedirect = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      redirect: false,
     };
   }
 
@@ -25,8 +28,6 @@ class ModalContainer extends React.Component {
   }
 
   render() {
-
-
     return (
       <div>
         
@@ -93,14 +94,16 @@ class ModalContainer extends React.Component {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button bsStyle="success" onClick={this.handleClose}>Submit</Button>
+            <Button href="/game" bsStyle="success" onClick={this.handleShow}>Submit</Button>
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
       </div>
+      
     );
   }
 }
 
 
 export default ModalContainer;
+
