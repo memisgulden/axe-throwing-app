@@ -59,7 +59,7 @@ class ModalContainer2 extends React.Component {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button bsStyle="success" onClick={this.handleClose}>Submit</Button>
+            <Button href="/game" bsStyle="success" onClick={this.handleClose}>Submit</Button>
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
