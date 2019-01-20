@@ -1,8 +1,11 @@
 import React from "react";
 import {
-  Button, Navbar, Panel, Jumbotron, Modal,
-  FormControl, ControlLabel, Form, FormGroup, InputGroup
+  Button, Navbar, Jumbotron, Row,
+  Col, 
 } from 'react-bootstrap';
+import { Players } from "./Players";
+import "./Game.css";
+
 
 
 class Game extends React.Component {
@@ -10,14 +13,13 @@ class Game extends React.Component {
     super(props, context);
 
     this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
     this.gameStarted = this.gameStarted.bind(this);
+    this.alert = this.alert.bind(this);
+
 
     this.state = {
       show: false,
       gameStarted: false,
-      name: "",
-      players: [{name: ""}]
     };
   }
 
@@ -33,6 +35,12 @@ class Game extends React.Component {
     this.setState({ gameStarted: true });
     this.setState({ show: false });
   }
+
+  alert() {
+    console.log("buttons clicked 1");
+  }
+
+
 
 
   render() {
@@ -52,84 +60,45 @@ class Game extends React.Component {
 
           {this.state.gameStarted ? (
 
-          <div>
+            <div>
+              <Row>
+                <Jumbotron id="gameJumbo">
+                  <h5>Input each player. Tap a players name to remove.</h5>
+                </Jumbotron>
+              </Row>,
+  
+            <Row>
+                <Col xs={12} md={8}>
+                  <Button className="Button" bsSize="xsmall" bsStyle="warning">7</Button>
 
-            <Panel>
-              <h5>directions on how to play. blah blah blah. blah blah blah.</h5>
-            </Panel>
+                  <Button className="Button" onClick={this.alert} bsSize="large" bsStyle="primary">1
+                  <Button className="Button" bsStyle="success">3
+                  <Button className="Button" bsStyle="info">5
+                  </Button>
+                  </Button>
+                  </Button>
+                </Col>
 
-            <Panel>
-              <h3>PLAYERS:</h3>
-
-              <ul>
-                <li id="players"></li>
-              </ul>
-            </Panel>
-
-            <Panel>
-              <h3>Rose vs Rose</h3>
-            </Panel>
+                <Col xs={6} md={4}>
+                  <Jumbotron>
+                    <Players />
+                  </Jumbotron>
+                </Col>
+              </Row>
 
 
-            <Button className="Button" bsStyle="warning">7</Button>
 
-            <Button className="Button" bsSize="large" bsStyle="primary">1
-            <Button className="Button" bsStyle="success">3
-            <Button className="Button" bsStyle="info">5
-            </Button>
-            </Button>
-            </Button>
-
-          </div>) : (
+            </div>) : (
               <Jumbotron>
-                <h3>Welcome /USER/! </h3>
+                <h3>Welcome!</h3>
                 <hr />
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/Lki5gMgL2H0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <Button bsSize="large" block onClick={this.handleShow}>
+                <Button bsSize="large" block onClick={this.gameStarted}>
                   Start New Game
-            </Button>
+                </Button>
               </Jumbotron>
 
             )}
-
-          <Modal show={this.state.show} onHide={this.handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Welcome!</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-
-              <Form>
-                <FormGroup >
-                  <ControlLabel>Player #1</ControlLabel>{' '}
-                  <FormControl type="text" placeholder="Jane" />
-                </FormGroup>{' '}
-
-                <FormGroup >
-                  <ControlLabel>Player #2</ControlLabel>{' '}
-                  <FormControl type="text" placeholder="John" />
-                </FormGroup>{' '}
-
-                <FormGroup >
-                  <ControlLabel>Player #3</ControlLabel>{' '}
-                  <FormControl type="text" placeholder="Jim" />
-                </FormGroup>{' '}
-
-              </Form>
-
-            </Modal.Body>
-            <Modal.Footer>
-              <Button bsStyle="success" onClick={this.gameStarted}>Submit</Button>
-              <Button onClick={this.handleClose}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-
-
-
-
-
-
-
-
 
         </div>
       </div>
