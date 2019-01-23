@@ -100,7 +100,7 @@ class Game extends React.Component {
                 <h2>Watch the video. Start the game. </h2>
                 <hr />
                 <iframe width="600" height="315" src="https://www.youtube.com/embed/Lki5gMgL2H0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <Button bsSize="large" block onClick={this.alert}>
+                <Button bsSize="large" block onClick={this.gameStarted}>
                   Start New Game
                 </Button>
               </Jumbotron>
