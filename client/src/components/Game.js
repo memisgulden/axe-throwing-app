@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Button, Navbar, Jumbotron, Row,
-  Col, 
+  Col,
 } from 'react-bootstrap';
 import { Players } from "./Players";
 import "./Game.css";
@@ -46,17 +46,19 @@ class Game extends React.Component {
   render() {
     return (
 
-      <div>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#main">AXE.app</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Navbar.Text pullRight>ready. aim. throw.</Navbar.Text>
-        </Navbar>
+      <div id="gamePage">
 
-        <div className="container">
+          <Navbar  id="navBar" >
+            <Navbar.Header >
+              <Navbar.Brand>
+                <a href="#main">AXE.app</a>
+              </Navbar.Brand>
+            </Navbar.Header>
+            <Navbar.Text pullRight>ready. aim. throw.</Navbar.Text>
+          </Navbar>
+
+
+          <div className="container">
 
           {this.state.gameStarted ? (
 
@@ -66,7 +68,7 @@ class Game extends React.Component {
                   <h5>Input each player. Tap a players name to remove.</h5>
                 </Jumbotron>
               </Row>,
-  
+
             <Row>
                 <Col xs={12} md={8}>
                   <Button className="Button" bsSize="xsmall" bsStyle="warning">7</Button>
@@ -75,7 +77,7 @@ class Game extends React.Component {
                   <Button className="Button" bsStyle="success">3
                   <Button className="Button" bsStyle="info">5
                   </Button>
-                  </Button>
+                    </Button>
                   </Button>
                 </Col>
 
@@ -89,10 +91,10 @@ class Game extends React.Component {
 
 
             </div>) : (
-              <Jumbotron>
-                <h3>Welcome!</h3>
+              <Jumbotron id="welcomeJumbo">
+                <h2>Watch the video. Start the game. </h2>
                 <hr />
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Lki5gMgL2H0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="600" height="315" src="https://www.youtube.com/embed/Lki5gMgL2H0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <Button bsSize="large" block onClick={this.gameStarted}>
                   Start New Game
                 </Button>

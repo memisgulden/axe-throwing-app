@@ -94,7 +94,7 @@ class ModalContainer extends React.Component {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button href="/game" bsStyle="success" onClick={this.handleShow}>Submit</Button>
+            <Button href="/game" bsStyle="primary" onClick={this.handleShow}>Submit</Button>
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
