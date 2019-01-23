@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Button, Navbar, Jumbotron, Row,
-  Col, Popover, OverlayTrigger, Alert
+  Col, Popover, OverlayTrigger, Image
 } from 'react-bootstrap';
 import { Players } from "./Players";
 import "./Game.css";
@@ -14,12 +14,12 @@ class Game extends React.Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.gameStarted = this.gameStarted.bind(this);
-    this.alert = this.alert.bind(this);
 
 
     this.state = {
       show: false,
       gameStarted: false,
+      count: 0,
     };
   }
 
@@ -36,15 +36,26 @@ class Game extends React.Component {
     this.setState({ show: false });
   }
 
-  alert() {
-    console.log("buttons clicked 1");
-    
-  }
+  handleClick1 = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  handleClick7 = () => {
+    this.setState({ count: this.state.count + 7 });
+  };
+
+  handleClick3 = () => {
+    this.setState({ count: this.state.count + 3 });
+  };
+
+  handleClick5 = () => {
+    this.setState({ count: this.state.count + 5 });
+  };
 
 
   render() {
     const popoverTop = (
-      <Popover id="popover-positioned-top" title="Help">
+      <Popover id="popover-positioned-top" title="Directions">
         Input each players name. Click on a name to delete.
       </Popover>
     );
@@ -70,18 +81,26 @@ class Game extends React.Component {
 
               <Row>
                 <Col xs={12} md={8}>
-                  <Button className="Button" bsSize="xsmall" bsStyle="warning">7</Button>
+                
+                  <Jumbotron id="boardJumbo">
+                  <Button className="Button" id="large" onClick={this.handleClick7} bsStyle="success">7</Button>
+                  <Button className="Button" id="large2" onClick={this.handleClick7} bsStyle="success">7</Button>
 
-                  <Button className="Button" onClick={this.handleShow} bsSize="large" bsStyle="primary">1
-                  <Button className="Button" bsStyle="success">3
-                  <Button className="Button" bsStyle="info">5
-                  </Button>
-                    </Button>
-                  </Button>
+                  <Button className="Button" id="small" onClick={this.handleClick1} bsSize="large" bsStyle="primary">1</Button>
+
+                  <Button className="Button" id="medium" onClick={this.handleClick3} bsStyle="warning">3</Button>
+
+                  <Button className="Button" id="medium2" onClick={this.handleClick5} bsStyle="danger">5</Button>
+
+
+                  </Jumbotron>
+
+                  <h1>Click Count: {this.state.count}</h1>
+
                 </Col>
 
                 <Col xs={6} md={4}>
-                  <Jumbotron>
+                  <Jumbotron id="playerJumbo">
                     <Players />
                   </Jumbotron>
                 </Col>
@@ -107,7 +126,13 @@ class Game extends React.Component {
 
             )}
 
+            
+
         </div>
+
+        {/* TO DO: Make a footer */}
+
+
       </div>
 
     );

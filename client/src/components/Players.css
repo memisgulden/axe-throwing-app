@@ -1,0 +1,23 @@
+.players-list {
+    font-family: 'Old Standard TT', serif;
+    color: black;
+    text-align: center;
+    font-style: bold;
+}
+
+#new-player {
+    margin: 10px;
+    font-size: 15px;
+}
+
+#playerCount {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+ul {
+    font-size: 50px;
+    list-style-type: none;
+    text-align: center;
+
+}

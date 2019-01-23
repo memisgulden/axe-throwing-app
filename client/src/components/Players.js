@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import {
+    Button
+  } from 'react-bootstrap';
+  
+import "./Players.css";
+
 
 class Players extends React.Component {
     constructor(props) {
@@ -57,12 +63,16 @@ class Players extends React.Component {
 
         return (
             <div className="players-list">
+
+                <p id="playerCount" className={cssCounter} >Player Count: {this.state.players.length}</p>
+
+
                 <div className="nav-add">
                     <input type="text" id="input-add" />
-                    <button id="new-player"
-                        onClick={this.addPlayer.bind(this)}>New Player</button>
+                    <Button id="new-player"
+                        onClick={this.addPlayer.bind(this)}>New Player</Button>
                 </div>
-                <p className={cssCounter} >Player Count: {this.state.players.length}</p>
+
                 <ul>
                     {playerItems}
                 </ul>

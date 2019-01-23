@@ -42,6 +42,47 @@ iframe {
 }
 
 #trigger {
-    background-color: #737861 !important;
-    margin-top: 100px;
+    margin-top: 150px;
+    position: absolute;
+}
+
+#playerJumbo {
+    background: rgba(243, 241, 241, 0.3);
+}
+
+#boardJumbo {
+    background: url("../images/board.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+}
+
+#large {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+}
+
+#large2 {
+    position: absolute;
+    top: 80px;
+    left: 310px;
+}
+
+#small {
+    position: absolute;
+    top: 140px;
+    left: 180px;
+}
+
+#medium {
+    position: absolute;
+    top: 210px;
+    left: 180px;
+}
+
+#medium2 {
+    position: absolute;
+    top: 280px;
+    left: 180px;
 }
