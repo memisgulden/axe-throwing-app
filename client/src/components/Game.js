@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Button, Navbar, Jumbotron, Row,
-  Col,
+  Col, Popover, OverlayTrigger, Alert
 } from 'react-bootstrap';
 import { Players } from "./Players";
 import "./Game.css";
@@ -38,42 +38,41 @@ class Game extends React.Component {
 
   alert() {
     console.log("buttons clicked 1");
+    
   }
 
 
-
-
   render() {
+    const popoverTop = (
+      <Popover id="popover-positioned-top" title="Help">
+        Input each players name. Click on a name to delete.
+      </Popover>
+    );
     return (
 
       <div id="gamePage">
 
-          <Navbar  id="navBar" >
-            <Navbar.Header >
-              <Navbar.Brand>
-                <a href="#main">AXE.app</a>
-              </Navbar.Brand>
-            </Navbar.Header>
-            <Navbar.Text pullRight>ready. aim. throw.</Navbar.Text>
-          </Navbar>
+        <Navbar id="navBar" >
+          <Navbar.Header >
+            <Navbar.Brand>
+              <a href="#main">AXE.app</a>
+            </Navbar.Brand>
+          </Navbar.Header>
+          <Navbar.Text pullRight>ready. aim. throw.</Navbar.Text>
+        </Navbar>
 
 
-          <div className="container">
+        <div className="container">
 
           {this.state.gameStarted ? (
 
             <div>
-              <Row>
-                <Jumbotron id="gameJumbo">
-                  <h5>Input each player. Tap a players name to remove.</h5>
-                </Jumbotron>
-              </Row>,
 
-            <Row>
+              <Row>
                 <Col xs={12} md={8}>
                   <Button className="Button" bsSize="xsmall" bsStyle="warning">7</Button>
 
-                  <Button className="Button" onClick={this.alert} bsSize="large" bsStyle="primary">1
+                  <Button className="Button" onClick={this.handleShow} bsSize="large" bsStyle="primary">1
                   <Button className="Button" bsStyle="success">3
                   <Button className="Button" bsStyle="info">5
                   </Button>
@@ -87,7 +86,13 @@ class Game extends React.Component {
                   </Jumbotron>
                 </Col>
               </Row>
+                
 
+              <Row>
+                <OverlayTrigger trigger="click" placement="top" overlay={popoverTop}>
+                  <Button id="trigger">Help?</Button>
+                </OverlayTrigger>
+              </Row>,
 
 
             </div>) : (
@@ -95,7 +100,7 @@ class Game extends React.Component {
                 <h2>Watch the video. Start the game. </h2>
                 <hr />
                 <iframe width="600" height="315" src="https://www.youtube.com/embed/Lki5gMgL2H0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <Button bsSize="large" block onClick={this.gameStarted}>
+                <Button bsSize="large" block onClick={this.alert}>
                   Start New Game
                 </Button>
               </Jumbotron>
