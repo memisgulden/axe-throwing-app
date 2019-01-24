@@ -19,7 +19,7 @@
 #gamePage {
     background-image: url("../images/wood_1.png");
     /* background-color: #737861; */
-    height: 1000px;    
+    height: 1500px;    
     font-family: 'Old Standard TT', serif;
 
 }
@@ -41,10 +41,6 @@ iframe {
     margin-top: 10px;
 }
 
-#trigger {
-    margin-top: 150px;
-    position: absolute;
-}
 
 #playerJumbo {
     background: rgba(243, 241, 241, 0.3);
@@ -85,4 +81,36 @@ iframe {
     position: absolute;
     top: 280px;
     left: 180px;
+}
+
+#car1 {
+    background-image: url("groupphoto.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 900px;
+}
+
+#car2 {
+    background-image: url("groupthrowing2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 900px;
+}
+
+#car3 {
+    background-image: url("IMG_1650.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 900px;
+}
+
+#car4 {
+    background-image: url("IMG_1651.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 900px;
 }
